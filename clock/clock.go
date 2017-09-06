@@ -12,19 +12,19 @@ type Clock struct {
 	minute int
 }
 
-func positive_modulo(m, n int) int {
+func positiveModulo(m, n int) int {
 	return ((m % n) + n) % n
 }
 
 // New creates a new Clock
 func New(hour, minute int) Clock {
 	if minute < 0 {
-		hour = positive_modulo((hour + minute/60), 24)
-		minute = positive_modulo(minute, 60)
+		hour = positiveModulo((hour + minute/60), 24)
+		minute = positiveModulo(minute, 60)
 	}
 
 	if hour < 0 {
-		hour = positive_modulo(hour, 24)
+		hour = positiveModulo(hour, 24)
 	}
 	if minute > 59 {
 		hour = hour + (minute / 60)
