@@ -1,0 +1,18 @@
+# Compiled Python modules
+*.pyo
+*.pyc
+
+*components
+*node_modules
+*npm-debug.log
+
+# Vagrant private files
+.vagrant/*
+
+log
+
+# vscode editor
+.vscode
+
+# delve debugger stuff
+debug.test
