@@ -1,8 +1,26 @@
 package raindrops
 
+import "strconv"
+
 const testVersion = 3
 
-func Convert(int) string
+// Convert transforms an interger into Rainspeak
+func Convert(x int) string {
+	var result string
+	if x%3 == 0 {
+		result = result + "Pling"
+	}
+	if x%5 == 0 {
+		result = result + "Plang"
+	}
+	if x%7 == 0 {
+		result = result + "Plong"
+	}
 
-// Don't forget the test program has a benchmark too.
-// How fast does your Convert convert?
+	if result == "" {
+		return strconv.Itoa(x)
+	}
+
+	return result
+
+}
